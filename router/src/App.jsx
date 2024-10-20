@@ -1,8 +1,10 @@
+// App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Welcome from './Welcome';
 import Counter from './Counter';
 import ShowGithubUser from './ShowGithubUser';
+import NotFound from './NotFound'; 
 
 const App = () => {
   return (
@@ -24,6 +26,7 @@ const App = () => {
         <Route path="/" element={<Welcome name="User" age={25} />} />
         <Route path="/counter" element={<Counter />} />
         <Route path="/users/:username" element={<ShowGithubUser />} />
+        <Route path="*" element={<NotFound />} /> 
       </Routes>
     </Router>
   );
