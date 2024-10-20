@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Welcome from './Welcome';
 import Counter from './Counter';
 import ShowGithubUser from './ShowGithubUser';
-import NotFound from './NotFound'; 
+import NotFound from './NotFound';
+import GithubUserList from './GithubUserList'; 
 
 const App = () => {
   return (
@@ -18,14 +19,15 @@ const App = () => {
             <Link to="/counter">Counter</Link>
           </li>
           <li>
-            <Link to="/users/octocat">GitHub User</Link> 
+            <Link to="/users">GitHub Users</Link> 
           </li>
         </ul>
       </nav>
       <Routes>
         <Route path="/" element={<Welcome name="User" age={25} />} />
         <Route path="/counter" element={<Counter />} />
-        <Route path="/users/:username" element={<ShowGithubUser />} />
+        <Route path="/users" element={<GithubUserList />} /> 
+        <Route path="/users/:username" element={<ShowGithubUser />} /> 
         <Route path="*" element={<NotFound />} /> 
       </Routes>
     </Router>
